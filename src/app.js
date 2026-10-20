@@ -1,4 +1,4 @@
-import { addTodo, toggleTodo, removeTodo, visibleTodos } from "./todo.js";
+import { addTodo, toggleTodo, removeTodo, visibleTodos, remainingCount } from "./todo.js";
 
 let todos = [
   { id: 1, title: "Sign in to Orbi Cloud", done: true },
@@ -12,6 +12,7 @@ let filter = "all";
 const form = document.querySelector("#new-todo");
 const input = document.querySelector("#title");
 const list = document.querySelector("#list");
+const count = document.querySelector("#remaining-count");
 const status = document.querySelector("#app-status");
 const error = document.querySelector("#input-error");
 const empty = document.querySelector("#empty-list");
@@ -26,6 +27,7 @@ function focusTask(selector, index) {
 
 function render() {
   const visible = visibleTodos(todos, filter);
+  count.textContent = `${remainingCount(todos)} left`;
   list.replaceChildren(...visible.map((todo, index) => {
     const item = document.createElement("li");
     const label = document.createElement("label");
