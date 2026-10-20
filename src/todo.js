@@ -16,6 +16,11 @@ export function removeTodo(todos, id) {
   return todos.filter((t) => t.id !== id);
 }
 
+// Unfinished tasks across the whole list; the header count ignores the filter.
+export function remainingCount(todos) {
+  return todos.filter((t) => !t.done).length;
+}
+
 export function visibleTodos(todos, filter) {
   if (filter === "active") return todos.filter((t) => !t.done);
   if (filter === "done") return todos.filter((t) => t.done);

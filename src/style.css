@@ -19,6 +19,7 @@ header { display: flex; justify-content: space-between; align-items: center; gap
 header a { color: var(--ink); font-weight: 600; text-decoration: none; }
 h1 { font-size: 1.4rem; margin: 1.25rem 0 .5rem; }
 h2 { font-size: 1.05rem; margin: 0 0 .5rem; }
+.list-heading { display: flex; align-items: baseline; gap: .5rem; }
 p { margin: .5rem 0 1rem; }
 a { color: var(--focus); overflow-wrap: anywhere; }
 .muted, footer { color: var(--ink-muted); }
